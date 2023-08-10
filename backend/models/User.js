@@ -10,19 +10,20 @@ const userSchema = mongoose.Schema(
       trim: true,
       text: true,
     },
-    first_name: {
+    last_name: {
       type: String,
-      required: [true, "first name is required"],
+      required: [true, "last name is required"],
       trim: true,
       text: true,
     },
-
     username: {
       type: String,
       required: [true, "username is required"],
       trim: true,
       text: true,
+      unique: true,
     },
+
     email: {
       type: String,
       required: [true, "email is required"],
@@ -47,6 +48,11 @@ const userSchema = mongoose.Schema(
       required: [true, "gender is required"],
       trim: true,
     },
+    bYear: {
+      type: Number,
+      required: true,
+      trim: true,
+    },
     bMonth: {
       type: Number,
       required: true,
@@ -58,7 +64,7 @@ const userSchema = mongoose.Schema(
       trim: true,
     },
     verified: {
-      type: Number,
+      type: Boolean,
       default: false,
     },
     friends: {
@@ -69,18 +75,18 @@ const userSchema = mongoose.Schema(
       type: Array,
       default: [],
     },
-    follower: {
+    followers: {
       type: Array,
       default: [],
     },
-    request: {
+    requests: {
       type: Array,
       default: [],
     },
     search: [
       {
         user: {
-          type: mongoose.Schema.ObjectId,
+          type: ObjectId,
           ref: "User",
         },
       },
@@ -98,7 +104,7 @@ const userSchema = mongoose.Schema(
       workplace: {
         type: String,
       },
-      highschool: {
+      highSchool: {
         type: String,
       },
       college: {
