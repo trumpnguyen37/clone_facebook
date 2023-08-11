@@ -11,7 +11,6 @@ const loginInfos = {
 export default function Login() {
   const [login, setLogin] = useState(loginInfos);
   const { email, password } = login;
-  console.log(login);
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLogin({ ...login, [name]: value });
@@ -19,7 +18,7 @@ export default function Login() {
   const loginValidation = Yup.object({
     email: Yup.string()
       .required("Email address is required.")
-      .email('"Must be a valid email.')
+      .email("Must be a valid email.")
       .max(100),
     password: Yup.string().required("Password is required"),
   });
@@ -36,6 +35,7 @@ export default function Login() {
           <div className="login_2">
             <div className="login_2_wrap">
               <Formik
+                enableReinitialize
                 initialValues={{
                   email,
                   password,
