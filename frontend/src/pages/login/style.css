@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* -------LOGIN---------- */
+=======
+>>>>>>> 22a922946be44cec38d4966fe5131f652eccf343
 .login_wrapper {
   background: var(--bg-secondary);
 }
@@ -61,6 +64,7 @@
 .sign_extra {
   font-size: 15px;
 }
+<<<<<<< HEAD
 /* -------LOGIN---------- */
 
 /* -------Register------ */
@@ -186,6 +190,8 @@
   margin: 20px 0 10px 0;
 }
 /* -------Register------ */
+=======
+>>>>>>> 22a922946be44cec38d4966fe5131f652eccf343
 
 /*----Footer------*/
 .login_footer {
