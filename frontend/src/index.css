@@ -35,3 +35,20 @@ a {
   --shadow-3: rgba(0, 0, 0, 0.3);
   --shadow-inset: rgba(255, 255, 255, 0.5);
 }
+
+/*---Button---*/
+.blue_btn {
+  border: none;
+  outline: none;
+  background: var(--blue-color);
+  padding: 0.5px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+/*---Button---*/
