@@ -57,6 +57,7 @@
   font-weight: 600 !important;
   font-size: 17px !important;
   margin-top: 1rem;
+  height: 42px;
 }
 .sign_extra {
   font-size: 15px;
@@ -231,6 +232,19 @@
 }
 /*----Footer------*/
 
+/* ----dob and gender errors---- */
+.reg_grid .input_error {
+  width: 300px;
+  position: absolute;
+  top: 70px;
+}
+
+.input_error_select_large {
+  top: 15px !important;
+  left: -98%;
+}
+/* ----dob and gender errors---- */
+
 /*----Media queries--------------*/
 @media (min-width: 539px) {
   .login_footer_wrap {
@@ -243,8 +257,12 @@
     flex-direction: row;
   }
   .reg_grid select,
-  .reg_grid lavbel {
+  .reg_grid label {
     width: 110px;
+  }
+
+  .reg_grid .input_error {
+    width: 350px;
   }
 }
 @media (min-width: 650px) {
