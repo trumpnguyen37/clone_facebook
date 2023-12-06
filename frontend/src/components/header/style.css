@@ -10,15 +10,13 @@ header {
   grid-template-columns: repeat(3, 1fr);
   color: var(--color-primary);
 }
-
-/* ----HeaderLeft---- */
+/*---Header left-----*/
 .header_left {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 5px 1rem;
 }
-
 .circle {
   width: 40px;
   height: 40px;
@@ -28,7 +26,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-
 .search {
   display: flex;
   align-items: center;
@@ -38,7 +35,6 @@ header {
   border-radius: 50px;
   cursor: text;
 }
-
 .search input {
   outline: none;
   border: none;
@@ -46,20 +42,19 @@ header {
   font-size: 15px;
   font-family: inherit;
 }
-
 .search input::placeholder {
   transform: translateY(-1px);
 }
-/* ----Header Left---- */
+/*---Header left-----*/
 
-/* ----Header Middle---- */
+/*---Header middle-----*/
+
 .header_middle {
   display: flex;
   align-items: center;
   gap: 14px;
   transform: translateX(3px);
 }
-
 .middle_icon {
   position: relative;
   display: flex;
@@ -71,34 +66,27 @@ header {
   cursor: pointer;
   transform: translateX(-2px);
 }
-
 .middle_icon:nth-child(2) {
-  transform: translateX(-2px);
+  transform: translateX(-4px);
 }
-
 .middle_icon:nth-child(3) {
   transform: translateX(-3px);
 }
-
 .middle_icon:nth-child(4) {
   transform: translateX(-5px);
 }
-
 .middle_icon:nth-child(5) {
   transform: translateX(-5px);
 }
-
 .active {
   border-bottom: 3px solid var(--blue-color);
   border-radius: 0;
   height: 56px;
   transform: translateX(0);
 }
-
 .active svg {
   transform: translateY(1px) translateX(-1px);
 }
-
 .middle_notification {
   position: absolute;
   top: 3px;
@@ -107,10 +95,12 @@ header {
   border-radius: 50px;
   padding: 1px 5px;
   font-size: 13px;
+  color: #fff;
 }
-/* ----Header Middle---- */
+/*---Header middle-----*/
 
-/* ----Header Right---- */
+/*---Header right-----*/
+
 .header_right {
   display: flex;
   position: absolute;
@@ -118,31 +108,28 @@ header {
   top: 50%;
   transform: translateY(-50%);
 }
-
 .profile_link {
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
   padding: 3px 10px 3px 6px;
+  border-radius: 50px;
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
   margin-right: 10px;
 }
-
 .profile_link img {
   width: 28.7px;
   height: 28.7px;
   border-radius: 50%;
   border: 1px solid #b0b3b8;
-  transform: translateY(-1px);
+  transform: translateX(-1px);
 }
-
 .profile_link span {
   margin-bottom: 3px;
 }
-
 .circle_icon {
   position: relative;
   height: 40px;
@@ -155,7 +142,6 @@ header {
   background: var(--bg-third);
   cursor: pointer;
 }
-
 .right_notification {
   position: absolute;
   top: -6px;
@@ -166,9 +152,9 @@ header {
   font-size: 13px;
   color: #fff;
 }
-/* ----Header Right---- */
+/*---Header right-----*/
 
-/* ----Search Menu---- */
+/*---Search menu-----*/
 .search_area {
   position: absolute;
   align-items: flex-start;
@@ -182,41 +168,34 @@ header {
   -webkit-font-smoothing: antialiased;
   z-index: 1;
   min-height: 400px;
-  min-height: 70vh;
+  max-height: 70vh;
   padding: 8px 16px 10px 6px;
 }
-
 .search_wrap {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-
 .search_area .search {
   padding: 10px 44px 10px 12px;
   width: 252px;
   gap: 4px;
 }
-.search_are .search input {
+.search_area .search input {
   padding-left: 4px;
 }
-
-.search_are .search svg {
+.search_area .search svg {
   transform: translateY(1px);
 }
-
 .search_area .search input::placeholder {
   transform: translateY(-2px);
 }
-
-.search_are .search input:focus::placeholder {
-  transform: translateY(-2px);
+.search_area .search input:focus::placeholder {
+  transform: translateY(-1px);
 }
-
 .search_history {
   width: 100%;
 }
-
 .search_history_header {
   width: 100%;
   display: flex;
@@ -225,19 +204,17 @@ header {
   padding: 10px;
   font-size: 14px;
 }
-
 .search_history_header span {
   font-weight: 600;
   font-size: 16px;
 }
-
 .search_history_header a {
   cursor: pointer;
   color: var(--blue-color);
 }
-/* ----Search Menu---- */
 
-/* ---Search All Menu--- */
+/*---Search menu-----*/
+/*---Search All Menu-----*/
 .all_menu {
   position: absolute;
   right: -9rem;
@@ -366,15 +343,125 @@ header {
   justify-content: center;
   background: var(--bg-third);
 }
-/* ---Search All Menu--- */
+/*---Search All Menu-----*/
 
-/* ----Scrollbar---- */
-.scrollbar::-webkit-scrollbar {
-  width: 8px;
+/*-------User menu----*/
+
+.mmenu {
+  padding: 0 0.3rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 360px;
+  border-radius: 10px;
+  background: var(--bg-primary);
+  box-shadow: 2px 2px 2px var(--shadow-1);
+  user-select: none;
+  padding: 10px;
+}
+.mmenu_header {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.mmenu_header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.mmenu_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mmenu_col span:first-of-type {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.mmenu_col span:last-of-type {
+  font-size: 14px;
+}
+.mmenu_main {
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mmenu_splitter {
+  width: 100%;
+  height: 1px;
+  background: var(--bg-third);
+  margin-top: 5px;
+}
+.mmenu_span1 {
+  font-size: 14px !important;
+}
+.mmenu_span2 {
+  font-size: 12px !important;
+  color: var(--color-secondary);
+}
+.mmenu_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  padding: 7px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.rArrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.scrollbar::-webkit-scrollbar-thumb {
-  background: #aeaeafa1;
-  border-radius: 5px;
+.absolute_wrap {
+  padding: 0 0.3rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 360px;
+  height: fit-content;
+  border-radius: 10px;
+  background: var(--bg-primary);
+  box-shadow: 2px 2px 2px var(--shadow-1);
+  user-select: none;
+  padding: 10px;
 }
-/* ----Scrollbar---- */
+.absolute_wrap .mmenu_item {
+  margin-top: 0;
+}
+.absolute_wrap_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.absolute_wrap label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 50px;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.absolute_wrap label input {
+  width: 20px;
+  height: 20px;
+}
+
+/*-------User menu----*/
