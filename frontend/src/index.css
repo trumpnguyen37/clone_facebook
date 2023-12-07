@@ -36,48 +36,53 @@ a {
   --shadow-inset: rgba(255, 255, 255, 0.5);
 }
 
-/*---Button---*/
+/*----Buttons----*/
 .blue_btn {
   border: none;
   outline: none;
   background: var(--blue-color);
-  padding: 0.5px 12px;
+  padding: 8.5px 12px;
   border-radius: 7px;
   font-family: inherit;
+  font-weight: 600;
   font-size: 14px;
   color: #fff;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
 }
-/*---Button---*/
+/*----Buttons----*/
 .blur {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  background: rgba(255, 255, 255, 0.768);
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.76);
   z-index: 99;
 }
 
-/* ----Hovers---- */
+/*----Buttons----*/
+
+/*-----Hovers-----*/
 .hover1:hover {
   background: var(--bg-secondary);
 }
-
 .hover2:hover {
   background: var(--bg-third);
 }
-
-/* ----Hovers---- */
-
+.hover3:hover {
+  background: #d4d6da3a;
+}
+/*-----Hovers-----*/
 .card {
   height: 500px;
   width: 500px;
   background: red;
 }
+
 /*----Scrollbar----*/
 
 .scrollbar::-webkit-scrollbar {
