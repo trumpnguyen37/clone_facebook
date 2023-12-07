@@ -1,4 +1,4 @@
-const jwt = require("jonwebtoken");
+const jwt = require("jsonwebtoken");
 
 exports.authUser = async (req, res, next) => {
   try {
