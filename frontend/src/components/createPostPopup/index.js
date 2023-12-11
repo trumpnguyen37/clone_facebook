@@ -4,15 +4,26 @@ import Picker from "emoji-picker-react";
 import EmojiPickerBackgrounds from "./EmojiPickerBackgrounds";
 import AddToYourPost from "./AddToYourPost";
 import ImagePreview from "./ImagePreview";
-export default function CreatePostPopup({ user }) {
+import useClickOutside from "../../helpers/clickOutside";
+export default function CreatePostPopup({ user, setVisible }) {
+  const popup = useRef(null);
   const [text, setText] = useState("");
-  const [showPrev, setShowPrev] = useState(true);
+  const [showPrev, setShowPrev] = useState(false);
   const [images, setImages] = useState([]);
+  const [background, setBackground] = useState("");
+  useClickOutside(popup, () => {
+    setVisible(false);
+  });
   return (
     <div className="blur">
-      <div className="postBox">
+      <div className="postBox" ref={popup}>
         <div className="box_header">
-          <div className="small_circle">
+          <div
+            className="small_circle"
+            onClick={() => {
+              setVisible(false);
+            }}
+          >
             <i className="exit_icon"></i>
           </div>
           <span>Create Post</span>
@@ -38,6 +49,8 @@ export default function CreatePostPopup({ user }) {
               user={user}
               setText={setText}
               showPrev={showPrev}
+              setBackground={setBackground}
+              background={background}
             />
           </>
         ) : (
@@ -48,9 +61,10 @@ export default function CreatePostPopup({ user }) {
             showPrev={showPrev}
             images={images}
             setImages={setImages}
+            setShowPrev={setShowPrev}
           />
         )}
-        <AddToYourPost />
+        <AddToYourPost setShowPrev={setShowPrev} />
         <button className="post_submit">Post</button>
       </div>
     </div>
