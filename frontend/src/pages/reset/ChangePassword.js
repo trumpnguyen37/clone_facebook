@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import LoginInput from "../../components/inputs/logininput";
+import LoginInput from "../../components/inputs/loginInput";
 import * as Yup from "yup";
 import axios from "axios";
 export default function ChangePassword({
@@ -10,7 +10,7 @@ export default function ChangePassword({
   conf_password,
   setConf_password,
   error,
-  loading,
+  laoding,
   setLoading,
   userInfos,
   setError,

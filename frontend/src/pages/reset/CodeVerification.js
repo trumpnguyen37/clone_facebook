@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LoginInput from "../../components/inputs/logininput";
+import LoginInput from "../../components/inputs/loginInput";
 import * as Yup from "yup";
 import axios from "axios";
 export default function CodeVerification({
@@ -36,6 +36,7 @@ export default function CodeVerification({
       setError(error.response.data.message);
     }
   };
+  console.log(email);
   return (
     <div className="reset_form">
       <div className="reset_form_header">Code verification</div>

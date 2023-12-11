@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Return, Search } from "../../svg";
 import useClickOutside from "../../helpers/clickOutside";
-
 export default function SearchMenu({ color, setShowSearchMenu }) {
   const [iconVisible, setIconVisible] = useState(true);
   const menu = useRef(null);
@@ -13,7 +12,7 @@ export default function SearchMenu({ color, setShowSearchMenu }) {
     input.current.focus();
   }, []);
   return (
-    <div className="header_left search_area scrollbar " ref={menu}>
+    <div className="header_left search_area scrollbar" ref={menu}>
       <div className="search_wrap">
         <div className="header_logo">
           <div
@@ -22,13 +21,20 @@ export default function SearchMenu({ color, setShowSearchMenu }) {
               setShowSearchMenu(false);
             }}
           >
-            <Return />
+            <Return color={color} />
           </div>
         </div>
-        <div className="search">
-          <div>
-            <Search color={color} />
-          </div>
+        <div
+          className="search"
+          onClick={() => {
+            input.current.focus();
+          }}
+        >
+          {iconVisible && (
+            <div>
+              <Search color={color} />
+            </div>
+          )}
           <input
             type="text"
             placeholder="Search Facebook"

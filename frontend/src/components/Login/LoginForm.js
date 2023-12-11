@@ -1,17 +1,17 @@
 import { Formik, Form } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import LoginInput from "../inputs/logininput";
+import LoginInput from "../../components/inputs/loginInput";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import axios from "axios";
-import Cookies from "js-cookie";
 import DotLoader from "react-spinners/DotLoader";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 const loginInfos = {
   email: "",
   password: "",
 };
-
 export default function LoginForm({ setVisible }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -40,11 +40,9 @@ export default function LoginForm({ setVisible }) {
           password,
         }
       );
-      setTimeout(() => {
-        dispatch({ type: "LOGIN", payload: data });
-        Cookies.set("user", JSON.stringify(data));
-        navigate("/");
-      }, 2000);
+      dispatch({ type: "LOGIN", payload: data });
+      Cookies.set("user", JSON.stringify(data));
+      navigate("/");
     } catch (error) {
       setLoading(false);
       setError(error.response.data.message);
@@ -86,13 +84,6 @@ export default function LoginForm({ setVisible }) {
                   onChange={handleLoginChange}
                   bottom
                 />
-                <DotLoader
-                  color="#1876f2"
-                  loading={loading}
-                  size={30}
-                  aria-label="Loading Spinner"
-                  data-testid="loader"
-                />
                 <button type="submit" className="blue_btn">
                   Log In
                 </button>
@@ -102,6 +93,8 @@ export default function LoginForm({ setVisible }) {
           <Link to="/reset" className="forgot_password">
             Forgotten password?
           </Link>
+          <DotLoader color="#1876f2" loading={loading} size={30} />
+
           {error && <div className="error_text">{error}</div>}
           <div className="sign_splitter"></div>
           <button

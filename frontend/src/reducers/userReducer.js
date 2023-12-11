@@ -12,6 +12,7 @@ export function userReducer(
       return null;
     case "VERIFY":
       return { ...state, verified: action.payload };
+
     default:
       return state;
   }

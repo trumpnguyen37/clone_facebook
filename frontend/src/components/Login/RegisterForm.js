@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import * as Yup from "yup";
 import RegisterInput from "../inputs/registerInput";
+import * as Yup from "yup";
 import DateOfBirthSelect from "./DateOfBirthSelect";
 import GenderSelect from "./GenderSelect";
 import DotLoader from "react-spinners/DotLoader";
@@ -9,7 +9,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-
 export default function RegisterForm({ setVisible }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,7 +22,6 @@ export default function RegisterForm({ setVisible }) {
     bDay: new Date().getDate(),
     gender: "",
   };
-
   const [user, setUser] = useState(userInfos);
   const {
     first_name,
@@ -40,7 +38,6 @@ export default function RegisterForm({ setVisible }) {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-
   const years = Array.from(new Array(108), (val, index) => yearTemp - index);
   const months = Array.from(new Array(12), (val, index) => 1 + index);
   const getDays = () => {
@@ -49,14 +46,14 @@ export default function RegisterForm({ setVisible }) {
   const days = Array.from(new Array(getDays()), (val, index) => 1 + index);
   const registerValidation = Yup.object({
     first_name: Yup.string()
-      .required("What's your First name?")
-      .min(2, "First name must be between 2 and 16 characters.")
-      .max(16, "First name must be between 2 and 16 characters.")
+      .required("What's your First name ?")
+      .min(2, "Fisrt name must be between 2 and 16 characters.")
+      .max(16, "Fisrt name must be between 2 and 16 characters.")
       .matches(/^[aA-zZ]+$/, "Numbers and special characters are not allowed."),
     last_name: Yup.string()
-      .required("What's your Last name?")
-      .min(2, "First name must be between 2 and 16 characters.")
-      .max(16, "First name must be between 2 and 16 characters.")
+      .required("What's your Last name ?")
+      .min(2, "Last name must be between 2 and 16 characters.")
+      .max(16, "Last name must be between 2 and 16 characters.")
       .matches(/^[aA-zZ]+$/, "Numbers and special characters are not allowed."),
     email: Yup.string()
       .required(
@@ -65,7 +62,7 @@ export default function RegisterForm({ setVisible }) {
       .email("Enter a valid email address."),
     password: Yup.string()
       .required(
-        "Enter a combination of at least six number, letters and punctuation marks(such as ! and &). "
+        "Enter a combination of at least six numbers,letters and punctuation marks(such as ! and &)."
       )
       .min(6, "Password must be atleast 6 characters.")
       .max(36, "Password can't be more than 36 characters"),
@@ -79,7 +76,6 @@ export default function RegisterForm({ setVisible }) {
 
   const registerSubmit = async () => {
     try {
-      setLoading(true);
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/register`,
         {
@@ -135,11 +131,11 @@ export default function RegisterForm({ setVisible }) {
             let noMoreThan70 = new Date(1970 + 70, 0, 1);
             if (current_date - picked_date < atleast14) {
               setDateError(
-                "it looks like you've enetered the wrong info. Please make sure that you use your real date of birth"
+                "it looks like you(ve enetered the wrong info.Please make sure that you use your real date of birth."
               );
             } else if (current_date - picked_date > noMoreThan70) {
               setDateError(
-                "it looks like you've enetered the wrong info. Please make sure that you use your real date of birth"
+                "it looks like you(ve enetered the wrong info.Please make sure that you use your real date of birth."
               );
             } else if (gender === "") {
               setDateError("");
@@ -154,7 +150,7 @@ export default function RegisterForm({ setVisible }) {
           }}
         >
           {(formik) => (
-            <Form classNameName="register_form">
+            <Form className="register_form">
               <div className="reg_line">
                 <RegisterInput
                   type="text"
@@ -204,13 +200,14 @@ export default function RegisterForm({ setVisible }) {
                 <div className="reg_line_header">
                   Gender <i className="info_icon"></i>
                 </div>
+
                 <GenderSelect
                   handleRegisterChange={handleRegisterChange}
                   genderError={genderError}
                 />
               </div>
               <div className="reg_infos">
-                By clicking Sign Up, you agree to our{""}
+                By clicking Sign Up, you agree to our{" "}
                 <span>Terms, Data Policy &nbsp;</span>
                 and <span>Cookie Policy.</span> You may receive SMS
                 notifications from us and can opt out at any time.
@@ -218,13 +215,7 @@ export default function RegisterForm({ setVisible }) {
               <div className="reg_btn_wrapper">
                 <button className="blue_btn open_signup">Sign Up</button>
               </div>
-              <DotLoader
-                color="#1876f2"
-                loading={loading}
-                size={30}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
+              <DotLoader color="#1876f2" loading={loading} size={30} />
               {error && <div className="error_text">{error}</div>}
               {success && <div className="success_text">{success}</div>}
             </Form>

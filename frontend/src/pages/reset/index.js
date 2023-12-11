@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Cookies from "js-cookie";
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import LoginInput from "../../components/inputs/logininput";
+import LoginInput from "../../components/inputs/loginInput";
 import SearchAccount from "./SearchAccount";
 import SendEmail from "./SendEmail";
 import CodeVerification from "./CodeVerification";
-import Footer from "../../components/Login/Footer";
+import Footer from "../../components/login/Footer";
 import ChangePassword from "./ChangePassword";
 export default function Reset() {
   const { user } = useSelector((state) => ({ ...state }));

@@ -568,13 +568,11 @@ header {
 }
 /*---responsive----------*/
 
-/* ---Active Header--- */
+/*----Active header----*/
 .active_header {
   background: var(--light-blue-color);
 }
-
 .active_header svg {
   fill: var(--blue-color);
 }
-
-/* ---Active Header--- */
+/*----Active header----*/

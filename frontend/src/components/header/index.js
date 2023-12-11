@@ -72,7 +72,7 @@ export default function Header() {
         <Link to="/" className="middle_icon hover1">
           <Market color={color} />
         </Link>
-        <Link to="/" className="middle_icon hover1">
+        <Link to="/" className="middle_icon hover1 ">
           <Gaming color={color} />
         </Link>
       </div>
