@@ -4,6 +4,7 @@
 }
 .post {
   position: relative;
+  width: 685px;
   background: var(--bg-primary);
   border-radius: 10px;
   box-shadow: 0 1px 2px var(--shadow-1);
@@ -257,7 +258,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--light-color-primary);
   cursor: pointer;
   color: #fff;
+}
+@media (max-width: 415px) {
+  .post .grid_2 img,
+  .post .grid_3 img,
+  .post .grid_4 img,
+  .post .grid_5 img {
+    height: 240px !important;
+  }
+  .post_bg {
+    height: 400px !important;
+  }
+  .post .grid_1 {
+    height: 100% !important;
+  }
+  .post .grid_1 img {
+    height: 450px !important;
+  }
 }
