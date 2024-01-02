@@ -40,6 +40,7 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 19px;
+  color: var(--color-primary);
 }
 .updated_p {
   color: var(--color-secondary);
@@ -64,6 +65,9 @@
 }
 .post_text {
   padding: 0 15px 10px 15px;
+}
+.post_bg_text {
+  color: #000;
 }
 
 /*-----------------------------GRID IMAGES----------------*/
@@ -321,6 +325,7 @@
   font-weight: 600;
   font-size: 14px;
   transform: translateY(-1px);
+  text-transform: capitalize;
 }
 .reacts_popup {
   display: flex;
@@ -448,8 +453,89 @@
   background: #ced0d4;
   margin: 5px 0;
 }
+.post_profile_wrap {
+  position: relative;
+  height: 500px;
+  display: grid;
+  place-items: center;
+}
+.post_updated_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+  background: var(--bg-third);
+}
+.post_updated_bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.post_updated_picture {
+  z-index: 1;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg-primary);
+}
+.post_cover_wrap {
+  width: 100%;
+  height: 350px;
+}
+.post_cover_wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*----Comment-----------*/
+.comment {
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.comment_img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.comment_image {
+  margin-top: 5px;
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.comment_wrap {
+  background: var(--bg-forth);
+  padding: 5px 15px;
+  border-radius: 50px;
+}
+.comment_actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-left: 10px;
+}
+.view_comments {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+.view_comments:hover {
+  text-decoration: underline;
+}
+/*----Comment-----------*/
 /*------Post menu------*/
-@media (max-width: 415px) {
+@media (max-width: 435px) {
   .post .grid_2 img,
   .post .grid_3 img,
   .post .grid_4 img,
@@ -464,5 +550,41 @@
   }
   .post .grid_1 img {
     height: 450px !important;
+  }
+  .post_profile_wrap {
+    height: 320px;
+  }
+  .post_updated_bg {
+    height: 200px;
+  }
+  .post_updated_picture {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media (max-width: 400px) {
+  .posts {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .post input {
+    width: 30vw;
+  }
+  .post_profile_name {
+    font-size: 12px !important;
+  }
+  .post_header_left img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .reacts_popup {
+    top: -3rem;
+  }
+  .react img {
+    width: 32px;
+    height: 32px;
+  }
+  .comment_input_wrap input {
+    font-size: 12px;
   }
 }

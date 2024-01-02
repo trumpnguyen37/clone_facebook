@@ -6,7 +6,7 @@ const postSchema = new mongoose.Schema(
   {
     type: {
       type: String,
-      enum: ["profilePicture", "cover", null],
+      enum: ["profilePicture", "coverPicture", null],
       default: null,
     },
     text: {
@@ -37,7 +37,7 @@ const postSchema = new mongoose.Schema(
         },
         commentAt: {
           type: Date,
-          default: new Date(),
+          required: true,
         },
       },
     ],

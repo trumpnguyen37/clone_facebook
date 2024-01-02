@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import {
   ArrowDown,
   Friends,
+  FriendsActive,
   Gaming,
+  Home,
   HomeActive,
   Logo,
   Market,
@@ -19,7 +21,7 @@ import { useRef, useState } from "react";
 import AllMenu from "./AllMenu";
 import useClickOutside from "../../helpers/clickOutside";
 import UserMenu from "./userMenu";
-export default function Header() {
+export default function Header({ page, getAllPosts }) {
   const { user } = useSelector((user) => ({ ...user }));
   const color = "#65676b";
   const [showSearchMenu, setShowSearchMenu] = useState(false);
@@ -33,6 +35,7 @@ export default function Header() {
   useClickOutside(usermenu, () => {
     setShowUserMenu(false);
   });
+
   return (
     <header>
       <div className="header_left">
@@ -56,14 +59,25 @@ export default function Header() {
         </div>
       </div>
       {showSearchMenu && (
-        <SearchMenu color={color} setShowSearchMenu={setShowSearchMenu} />
+        <SearchMenu
+          color={color}
+          setShowSearchMenu={setShowSearchMenu}
+          token={user.token}
+        />
       )}
       <div className="header_middle">
-        <Link to="/" className="middle_icon active">
-          <HomeActive />
+        <Link
+          to="/"
+          className={`middle_icon ${page === "home" ? "active" : "hover1"}`}
+          onClick={() => getAllPosts()}
+        >
+          {page === "home" ? <HomeActive /> : <Home color={color} />}
         </Link>
-        <Link to="/" className="middle_icon hover1">
-          <Friends color={color} />
+        <Link
+          to="/friends"
+          className={`middle_icon ${page === "friends" ? "active" : "hover1"}`}
+        >
+          {page === "friends" ? <FriendsActive /> : <Friends color={color} />}
         </Link>
         <Link to="/" className="middle_icon hover1">
           <Watch color={color} />
@@ -77,7 +91,12 @@ export default function Header() {
         </Link>
       </div>
       <div className="header_right">
-        <Link to="/profile" className="profile_link hover1">
+        <Link
+          to="/profile"
+          className={`profile_link hover1 ${
+            page === "profile" ? "active_link" : ""
+          }`}
+        >
           <img src={user?.picture} alt="" />
           <span>{user?.first_name}</span>
         </Link>
