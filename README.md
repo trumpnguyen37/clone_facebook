@@ -56,7 +56,7 @@
 
 ### You can comment with text , emojis and also using pictures and see the added comments directly sorted and also show more comments functionality.
 
-### You can add and edit your details like othername, bio, job, workplace, relationship etc... and they will be visible on your profile and others can see it.
+### You can add and edit your details like othername, bio, job, workplace, relationship etc... and they will be visible on your profile and others can see it..
 
 ### We will have a friendship system just like facebook, you can add friend,/cancel request, follow/unfollow, accept request/delete request, unfriend...
 
