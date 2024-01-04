@@ -62,4 +62,3 @@
 
 ### You will have a friends page where you can see the friend requests you have, the friend requests you sent, and your list of friends also
 
-### We also add a live search functionality where you can search for other users and they will get stored in your search history and you always can remove them.
