@@ -62,6 +62,6 @@
 
 ### We will have a friendship system just like facebook, you can add friend,/cancel request, follow/unfollow, accept request/delete request, unfriend...
 
-### You will have a friends page where you can see the friend requests you have, the friend requests you sent, and your list of friends also
+### You will have a friends page where you can see the friend requests you have, the friend requests you sent, and your list of friends also.
 
 
