@@ -1,5 +1,5 @@
 # clone facebook
-=======
+========
 ### Build a fully functional Advanced Social Media Facebook clone application version 2022
 
 ### Master react js and all of its secrets and tricks and become comfortable using it for you frontend work
